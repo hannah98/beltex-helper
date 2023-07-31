@@ -59,7 +59,7 @@ def solve(number, steps=[]):
                 adder = try_addition(number)
                 if adder < number:
                     sum = number + adder
-                    steps.append(f"{number}+{adder}={sum}")
+                    steps.append(f"{sum}-{adder}={number}")
                     return solve(number + adder, steps)
             else:
                 value = int(number / divisor)
