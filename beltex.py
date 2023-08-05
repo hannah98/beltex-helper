@@ -4,7 +4,7 @@
 import os
 import sys
 
-available_numbers = [1, 2, 3, 4, 5, 6, 7]
+available_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 available_numbers_desc = available_numbers.copy()
 available_numbers_desc.sort(reverse=True)
 
