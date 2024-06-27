@@ -3,8 +3,9 @@
 
 import os
 import sys
+import math
 
-available_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+available_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13]
 available_numbers_desc = available_numbers.copy()
 available_numbers_desc.sort(reverse=True)
 
@@ -29,15 +30,12 @@ def try_addition(number):
 
 
 def find_larger_denominator(number):
-    # start at the largest available number and work up
     for divisor in range(available_numbers_desc[0] + 1, number):
         if can_divide(number, divisor):
             return divisor
     return 1
 
 
-# function to find a sum of available numbers that add up to a target number
-# e.g. 10 = 7 + 3
 def find_sum(target):
     for number in available_numbers:
         if number == target:
@@ -48,10 +46,25 @@ def find_sum(target):
     return None
 
 
+def can_be_power(number):
+    for base in available_numbers_desc:
+        if base == 1:
+            continue
+        exponent = round(math.log(number, base))
+        if base**exponent == number:
+            return (base, exponent)
+    return None
+
+
 def solve(number, steps=[]):
     if number in available_numbers:
         return steps
     else:
+        power = can_be_power(number)
+        if power:
+            base, exponent = power
+            steps.append(f"{base}^{exponent}={number}")
+            return solve(base, steps)
         divisor = find_largest_denominator(number)
         if divisor == 1:
             divisor = find_larger_denominator(number)
