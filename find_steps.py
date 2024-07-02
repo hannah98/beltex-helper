@@ -33,8 +33,6 @@ def apply_operation(x, y, op):
 def find_steps(target):
     base_numbers = list(range(1, max_number_available + 1))  # .remove(10)
     base_numbers.remove(10)
-    # debug base_numbers
-    print(base_numbers)
     operators = ["+", "-", "*", "/", "^"]
     queue = deque([(num, [str(num)]) for num in base_numbers])
     visited = set(base_numbers)
