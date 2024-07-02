@@ -4,6 +4,8 @@ from collections import deque
 import sys
 import math
 
+max_number_available = 14
+
 # Increase the limit for integer string conversion
 # sys.set_int_max_str_digits(100000)
 sys.set_int_max_str_digits(0)
@@ -29,7 +31,7 @@ def apply_operation(x, y, op):
 
 # Function to find the most efficient way to reach the target number
 def find_steps(target):
-    base_numbers = list(range(1, 14))
+    base_numbers = list(range(1, max_number_available + 1))
     operators = ["+", "-", "*", "/", "^"]
     queue = deque([(num, [str(num)]) for num in base_numbers])
     visited = set(base_numbers)
