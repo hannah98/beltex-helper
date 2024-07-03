@@ -4,7 +4,7 @@ from collections import deque
 import sys
 import math
 
-max_number_available = 14
+max_number_available = 15
 
 # Increase the limit for integer string conversion
 sys.set_int_max_str_digits(100000)
