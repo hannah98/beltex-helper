@@ -5,7 +5,10 @@ import os
 import sys
 import math
 
-available_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15]
+max_number_available = 15
+
+available_numbers = list(range(1, max_number_available + 1))
+available_numbers.remove(10)
 available_numbers_desc = available_numbers.copy()
 available_numbers_desc.sort(reverse=True)
 

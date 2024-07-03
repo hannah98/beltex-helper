@@ -31,7 +31,7 @@ def apply_operation(x, y, op):
 
 # Function to find the most efficient way to reach the target number
 def find_steps(target):
-    base_numbers = list(range(1, max_number_available + 1))  # .remove(10)
+    base_numbers = list(range(1, max_number_available + 1))
     base_numbers.remove(10)
     operators = ["+", "-", "*", "/", "^"]
     queue = deque([(num, [str(num)]) for num in base_numbers])
