@@ -1,0 +1,21 @@
+[tool.ruff]
+line-length = 88  # Same as Black (adjust if needed)
+indent-width = 2  # Use 2-space indentation instead of 4
+target-version = "py311"  # Set your Python version (change if needed)
+
+# Enable Ruff Linting (Replaces Flake8, isort, etc.)
+fix = true  # Auto-fix lint errors
+unsafe-fixes = true  # Fix more aggressive issues (optional)
+select = ["E", "F", "W", "I", "UP"]  # Enable basic checks (expand as needed)
+ignore = ["E501"]  # Ignore long line warnings (Black handles line wrapping)
+
+# Automatically sort imports (like isort)
+[tool.ruff.isort]
+known-first-party = ["your_project"]  # Replace with your module name
+
+# Configure Ruff Formatter (Replaces Black)
+[tool.ruff.format]
+quote-style = "double"  # Enforce double quotes
+indent-width = 2  # 2-space indentation
+line-ending = "lf"  # Force LF line endings (change to "crlf" for Windows)
+skip-magic-trailing-comma = false  # Match Black behavior
